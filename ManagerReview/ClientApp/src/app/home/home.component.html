@@ -1,0 +1,22 @@
+<div>Vinayaka-{{component}}</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">            
+            <div class="input-group">
+                <!-- <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-lg">Large</span>
+                </div> -->
+                <input placeholder="Search by name, company.." #entry (keyup)="changeEntry(entry.value)" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <ul *ngIf = "show" class="list-group">
+                <li *ngFor="let detail of details" class="list-group-item">
+                    <div class="text-capitalize text-monospace font-weight-bolder">{{ detail.firstname }} {{ detail.lastname }}</div>
+                    
+                    <div class="text-capitalize text-monospace text-muted">{{ detail.company }}</div>
+                </li>
+            </ul>           
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
