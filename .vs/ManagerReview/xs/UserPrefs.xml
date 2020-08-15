@@ -1,5 +1,8 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{013C8091-CF62-4647-A8B0-81D09134AFC1}|Default">
   <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="ManagerReview/ClientApp/src/app/home/home.module.ts" Line="7" Column="39" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -11,9 +14,10 @@
               <Node name="ClientApp" expanded="True">
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True">
-                    <Node name="home" expanded="True" />
+                    <Node name="home" expanded="True">
+                      <Node name="home.module.ts" selected="True" />
+                    </Node>
                     <Node name="model" expanded="True" />
-                    <Node name="app.component.ts" selected="True" />
                   </Node>
                 </Node>
               </Node>
