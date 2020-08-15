@@ -4,11 +4,12 @@ import { HomeComponent } from "./home.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { ModelModule } from "../model/model.module";
+import { ReviewComponent } from "./review.component";
 
 @NgModule({
-    declarations:[HomeComponent],
+    declarations:[HomeComponent, ReviewComponent],
     imports: [ModelModule, BrowserModule, FormsModule],
-    exports: [HomeComponent]
+    exports: [HomeComponent, ReviewComponent]
     
 })
 export class HomeModule { }

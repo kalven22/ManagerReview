@@ -1,12 +1,10 @@
 import { DetailRepository } from "./detail.repository";
-
 import { HttpClientModule } from "@angular/common/http";
-
 import { NgModule } from "@angular/core";
-import { DetailDataSource } from "./detail.datasource";
+import { AppDataSource } from "./app.datasource";
 
 @NgModule({
   imports: [HttpClientModule],
-  providers: [DetailRepository, DetailDataSource]
+  providers: [DetailRepository, AppDataSource]
 })
 export class ModelModule { }

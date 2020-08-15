@@ -25,6 +25,7 @@ namespace ManagerReview.Controllers
         public async Task<ActionResult<IEnumerable<Detail>>> GetDetails()
         {
             return await _context.Details.ToListAsync();
+
         }
 
         // GET: api/Detail/5

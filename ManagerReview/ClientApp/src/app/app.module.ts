@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
+import { HomeComponent } from './home/home.component';
+import { ReviewComponent } from './home/review.component';
 
 
 @NgModule({
@@ -14,8 +16,12 @@ import { HomeModule } from './home/home.module';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    HttpClientModule, HomeModule, FormsModule,
-    BrowserModule
+    HttpClientModule, HomeModule, FormsModule, BrowserModule,
+    RouterModule.forRoot([
+      { path: "home", component: HomeComponent },
+      { path: "review", component: ReviewComponent },
+      { path: "**", redirectTo: "/home" }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
