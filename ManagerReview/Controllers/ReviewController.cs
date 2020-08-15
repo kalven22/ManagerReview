@@ -47,7 +47,7 @@ namespace ManagerReview.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutReview(int id, Review review)
         {
-            if (id != review.managerid)
+            if (id != review.reviewid)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace ManagerReview.Controllers
             _context.Review.Add(review);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetReview", new { id = review.managerid }, review);
+            return CreatedAtAction("GetReview", new { id = review.reviewid }, review);
         }
 
         // DELETE: api/Review/5
@@ -103,7 +103,7 @@ namespace ManagerReview.Controllers
 
         private bool ReviewExists(int id)
         {
-            return _context.Review.Any(e => e.managerid == id);
+            return _context.Review.Any(e => e.reviewid == id);
         }
     }
 }
