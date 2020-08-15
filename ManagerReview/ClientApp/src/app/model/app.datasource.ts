@@ -2,8 +2,9 @@ import { Injectable } from "@angular/core";
 import { Detail } from "./detail.model";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { Review } from "./review.model";
 @Injectable()
-export class DetailDataSource {
+export class AppDataSource {
   private details: Detail[] = [];
   private baseUrl: string;
 
@@ -16,6 +17,10 @@ export class DetailDataSource {
 
   getDetails(): Observable<Detail[]> {
     return this.http.get<Detail[]>(this.baseUrl + "api/detail/");
+  }
+
+  getReviewById(id?:number): Observable<Review[]>{
+    return this.http.get<Review[]>(this.baseUrl + "api/review/" + id);
   }
   
 }
