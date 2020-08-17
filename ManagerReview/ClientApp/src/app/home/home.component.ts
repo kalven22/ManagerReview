@@ -20,6 +20,7 @@ export class HomeComponent {
   changeEntry(entry?: string) {
     this.entry = entry.toLowerCase();
     this.show = true;
+
   }
 
   onListSelect(managerid?: number) {

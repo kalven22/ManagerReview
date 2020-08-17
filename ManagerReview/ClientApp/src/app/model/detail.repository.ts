@@ -15,6 +15,7 @@ export class DetailRepository {
     getDetails(entry: string = null): Detail[] {
         return this.details
             .filter(d => entry == null || 
+                entry == ""||
                 entry == d.firstname.toLowerCase() || 
                 entry == d.lastname.toLowerCase()  || 
                 entry == d.company.toLowerCase());
