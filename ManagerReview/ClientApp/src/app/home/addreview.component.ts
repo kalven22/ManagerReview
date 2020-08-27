@@ -11,7 +11,7 @@ export class AddreviewComponent {
   public managerid: number = null;
   component = "AddreviewComponent";
   public entry: string = null;
-  public show: boolean = false;
+  public showList: boolean = false;
   constructor(private detailRepo: DetailRepository, private router: Router) { }
 
   
@@ -20,8 +20,8 @@ export class AddreviewComponent {
   }
   changeEntry(entry?: string) {
     this.entry = entry.toLowerCase();
-    this.show = true;
-
+    this.showList = true;
+    this.showForm = false;
   }
 
   onListSelect(managerid?: number, firstname?: string,
@@ -31,20 +31,32 @@ export class AddreviewComponent {
     this.firstname = firstname.toUpperCase();
     this.managerid = managerid;
     console.log(this.managerid);
-    this.show = false;
-     
+    
   }
 
   firstname: string="";
-//   getFirstname() {
-//     return this.firstname;
-//   }
+  lastname: string="";
+  company: string="";
+  team: string="";
 
   selectedDetail: number;
 
   getSelected(detail: Detail) {
     return detail.managerid == this.selectedDetail;
   }
+  public showForm = false;
+  addNewManager() {
+      this.showForm = true;
+      this.showList = false;
+  }
+  public tempMessage = "";
+  public showSuccess = false;
+  postDetail() {
+      this.detailRepo.postDetails(this.firstname, this.lastname, this.company, this.team);
+      this.showForm = false;
+      this.tempMessage = "Profile Created!"
+      this.showSuccess = true;
+    }
 
 
 }

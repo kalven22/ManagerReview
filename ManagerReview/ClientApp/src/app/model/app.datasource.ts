@@ -19,6 +19,10 @@ export class AppDataSource {
     return this.http.get<Detail[]>(this.baseUrl + "api/detail/");
   }
 
+  postDetails(detail: Detail): Observable<Detail> {
+    return this.http.post<Detail>(this.baseUrl + "api/detail/", detail);
+  }
+
   getReviews(): Observable<Review[]> {
     return this.http.get<Review[]>(this.baseUrl + "api/review/");
   }
