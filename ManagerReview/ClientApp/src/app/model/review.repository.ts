@@ -7,12 +7,13 @@ export class ReviewRepository {
     private reviews: Review[] = [];
     
     constructor(private appDataSource: AppDataSource) {
-        appDataSource.getReviewById().subscribe(data => {
+        appDataSource.getReviews().subscribe(data => {
             this.reviews = data;
             
         });
     }
-    getReviews(entry: string = null): Review[] {
-        return this.reviews;
+    getReviewsByManagerId(managerId: number = null): Review[] {
+        return this.reviews
+            .filter(d => managerId == d.managerid);
     }  
 }

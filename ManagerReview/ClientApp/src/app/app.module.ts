@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { HomeComponent } from './home/home.component';
 import { ReviewComponent } from './home/review.component';
+import { AddreviewComponent } from './home/addreview.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ReviewComponent } from './home/review.component';
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
       { path: "review", component: ReviewComponent },
+      { path: "addreview", component: AddreviewComponent },
       { path: "**", redirectTo: "/home" }
     ])
   ],

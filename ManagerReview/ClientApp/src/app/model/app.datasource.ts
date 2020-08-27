@@ -19,8 +19,12 @@ export class AppDataSource {
     return this.http.get<Detail[]>(this.baseUrl + "api/detail/");
   }
 
-  getReviewById(id?:number): Observable<Review[]>{
-    return this.http.get<Review[]>(this.baseUrl + "api/review/" + id);
+  getReviews(): Observable<Review[]> {
+    return this.http.get<Review[]>(this.baseUrl + "api/review/");
   }
+
+  // getReviewById(id?:number): Observable<Review[]>{
+  //   return this.http.get<Review[]>(this.baseUrl + "api/review/" + id);
+  // }
   
 }

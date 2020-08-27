@@ -1,0 +1,31 @@
+{{component}}
+<div class="input-group">
+    <input placeholder="Search by name.." #entry (keyup)="changeEntry(entry.value)" type="text"
+        class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+</div>
+<ul *ngIf="show" class="list-group">
+    <li *ngFor="let detail of details; let i = index" (mouseover)="selectedDetail=detail.managerid" [class.bg-light]="getSelected(detail)" (click)="onListSelect(detail.managerid, detail.firstname, detail.lastname, detail.company, detail.team)"
+        class="list-group-item">
+        <div class="text-capitalize text-monospace font-weight-bolder text-primary">
+            {{ detail.firstname }}
+            {{ detail.lastname }}</div>
+        <div class="text-capitalize text-monospace text-muted">{{ detail.company }}</div>
+    </li>
+</ul>
+{{firstname}}
+<form *ngIf="show == false">
+    <div class="form-group">
+      <label>First Name</label>
+      <input (input)="firstname=$event.target.value" [value] = "firstname" class="form-control">
+      
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="text" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

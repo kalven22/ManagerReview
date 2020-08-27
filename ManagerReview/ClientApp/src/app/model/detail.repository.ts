@@ -18,6 +18,9 @@ export class DetailRepository {
                 entry == ""||
                 entry == d.firstname.toLowerCase() || 
                 entry == d.lastname.toLowerCase()  || 
-                entry == d.company.toLowerCase());
+                entry == d.company.toLowerCase() ||
+                entry == d.firstname.toLowerCase() + " " + d.lastname.toLowerCase() ||
+                entry == d.lastname.toLowerCase() + " " + d.firstname.toLowerCase()
+                );
     }  
 }

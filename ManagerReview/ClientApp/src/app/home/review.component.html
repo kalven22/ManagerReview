@@ -1,1 +1,16 @@
 {{component}}
+{{managerid}}
+<button (click)="addreview()" type="button" class="btn btn-light">Add Review</button>
+<ul class="list-group">
+    <li *ngFor="let review of reviews" 
+        class="list-group-item">
+        <div class="text-capitalize text-monospace font-weight-bolder text-primary">
+            {{ review.managerid}}
+            {{ review.review }}
+            {{ review.advice }}
+            {{ review.fivestarrating }}
+            {{ review.approve }}
+        </div>
+    
+    </li>
+</ul>
