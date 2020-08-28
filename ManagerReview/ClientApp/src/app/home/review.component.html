@@ -1,5 +1,6 @@
 {{component}}
 {{managerid}}
+{{firstname}}
 <button (click)="addreview()" type="button" class="btn btn-light">Add Review</button>
 <ul class="list-group">
     <li *ngFor="let review of reviews" 
@@ -10,7 +11,6 @@
             {{ review.advice }}
             {{ review.fivestarrating }}
             {{ review.approve }}
-        </div>
-    
+        </div> 
     </li>
 </ul>

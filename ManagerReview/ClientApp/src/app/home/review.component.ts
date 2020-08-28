@@ -20,6 +20,7 @@ export class ReviewComponent {
 
   ngOnInit() {
     this.managerid=history.state.data;
+    this.firstname=history.state.fsname;
     console.log(history.state.data);
     console.log(history.state.fsname);
   }

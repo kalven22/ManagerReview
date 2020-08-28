@@ -67,4 +67,8 @@ export class AddreviewComponent {
             });
     }
 
+    addfirstreview(){
+        this.router.navigateByUrl('/review', {state: {data: this.newManagerId, fsname: this.firstname}});
+    }
+
 }
