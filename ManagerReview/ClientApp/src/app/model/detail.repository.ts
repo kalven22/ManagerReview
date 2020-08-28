@@ -2,11 +2,12 @@ import { Injectable } from "@angular/core";
 import { Detail } from "./detail.model";
 import { AppDataSource } from "./app.datasource";
 import { TemplateAst } from "@angular/compiler";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class DetailRepository {
     private details: Detail[] = [];
-    newDetail: Detail; resultDetail: Detail;
+    
     constructor(private appDataSource: AppDataSource) {
         appDataSource.getDetails().subscribe(data => {
             this.details = data;
@@ -24,17 +25,25 @@ export class DetailRepository {
                 entry == d.lastname.toLowerCase() + " " + d.firstname.toLowerCase()
                 );
     }  
-    
-    postDetails(firstname?: string, lastname?: string, company?: string, team?: string) {
+    newDetail: Detail; resultDetail: Observable<Detail>;
+    newManagerId: number;
+    postDetails(firstname?: string, lastname?: string, company?: string, team?: string): Observable<Detail> {
         this.newDetail = new Detail();
-        this.resultDetail = new Detail();
+        // this.resultDetail = new Detail();
         this.newDetail.firstname = firstname;
         this.newDetail.lastname = lastname;
         this.newDetail.company = company;
         this.newDetail.team = team;
 
-        this.appDataSource.postDetails(this.newDetail).subscribe(data => {
-            this.resultDetail = data;
-        });
+        // this.appDataSource.postDetails(this.newDetail).subscribe(data => {
+        //     this.resultDetail = data;
+        //     this.details.push(this.resultDetail);
+        //     this.newManagerId = this.resultDetail.managerid;         
+        // });
+
+        return this.appDataSource.postDetails(this.newDetail);
+
     }
+
+    
 }
