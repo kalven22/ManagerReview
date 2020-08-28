@@ -1,10 +1,11 @@
 import { Injectable } from "@angular/core";
 import { Review } from "./review.model";
 import { AppDataSource } from "./app.datasource";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class ReviewRepository {
-    private reviews: Review[] = [];
+    public reviews: Review[] = [];
     
     constructor(private appDataSource: AppDataSource) {
         appDataSource.getReviews().subscribe(data => {
@@ -16,4 +17,8 @@ export class ReviewRepository {
         return this.reviews
             .filter(d => managerId == d.managerid);
     }  
+
+    postReview(reviewObj: Review): Observable<Review> {
+        return this.appDataSource.postReview(reviewObj);
+    }
 }

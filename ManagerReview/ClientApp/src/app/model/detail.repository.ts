@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class DetailRepository {
-    private details: Detail[] = [];
+    public details: Detail[] = [];
     
     constructor(private appDataSource: AppDataSource) {
         appDataSource.getDetails().subscribe(data => {

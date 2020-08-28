@@ -63,7 +63,9 @@ export class AddreviewComponent {
                 this.newManagerId = data.managerid;
                 this.showForm = false;
                 this.tempMessage = "Profile Created!"
+                
                 this.showSuccess = true;
+
             });
     }
 
