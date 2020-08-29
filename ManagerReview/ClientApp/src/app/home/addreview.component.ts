@@ -70,7 +70,7 @@ export class AddreviewComponent {
     }
 
     addfirstreview(){
-        this.router.navigateByUrl('/review', {state: {data: this.newManagerId, fsname: this.firstname}});
+        this.router.navigateByUrl('/review', {state: {data: this.newManagerId, viewForm: true}});
     }
 
 }

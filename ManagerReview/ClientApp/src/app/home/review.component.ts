@@ -19,9 +19,10 @@ export class ReviewComponent {
 
   ngOnInit() {
     this.managerid=history.state.data;
-    this.firstname=history.state.fsname;
+    
+    this.showAddReviewForm = history.state.viewForm;
     console.log(history.state.data);
-    console.log(history.state.fsname);
+    console.log(history.state.viewForm);
   }
 
   get reviews() {
@@ -33,6 +34,7 @@ export class ReviewComponent {
   advice: string=""; fivestarrating:number = 5 ; approve: string = "Yes";
   addreview(){
     // this.router.navigateByUrl('/addreview');
+    this.review = ""; this.advice=""; this.fivestarrating = 5 ; this.approve = "Yes";
     this.showAddReviewForm = true;
   }
 
@@ -44,16 +46,14 @@ export class ReviewComponent {
     console.log(this.fivestarrating);
     console.log(this.approve);
     console.log(this.managerid);
-
-    
+   
     this.reviewObj = new Review();
     this.reviewObj.managerid=this.managerid;
     this.reviewObj.review=this.review;
     this.reviewObj.advice=this.advice;
     this.reviewObj.fivestarrating=this.stringToNumber(this.fivestarrating);
     this.reviewObj.approve=this.approve;
-
-    
+ 
     this.reviewRepo.postReview(this.reviewObj)
             .subscribe(data => {   
               this.newReviewId = data.review;
