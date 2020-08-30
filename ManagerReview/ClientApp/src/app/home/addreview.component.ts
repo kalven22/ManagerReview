@@ -34,6 +34,7 @@ export class AddreviewComponent {
         this.managerid = managerid;
         console.log(this.managerid);
 
+        this.router.navigateByUrl('/review', {state: {data: this.newManagerId, viewForm: true}});
     }
 
     firstname: string = "";

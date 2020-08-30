@@ -1,18 +1,29 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{013C8091-CF62-4647-A8B0-81D09134AFC1}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ManagerReview/ClientApp/src/app/model/app.datasource.ts">
+    <Files>
+      <File FileName="ManagerReview/ClientApp/src/app/home/addreview.component.html" Line="1" Column="1" />
+      <File FileName="ManagerReview/ClientApp/src/app/home/review.component.ts" />
+      <File FileName="ManagerReview/Properties/launchSettings.json" />
+      <File FileName="ManagerReview/appsettings.json" />
+      <File FileName="ManagerReview/package-lock.json" />
+      <File FileName="ManagerReview/Program.cs" />
+      <File FileName="ManagerReview/Startup.cs" Line="1" Column="1" />
+      <File FileName="ManagerReview/Controllers/DetailController.cs" />
+      <File FileName="ManagerReview/Models/APIDbContext.cs" />
+      <File FileName="ManagerReview/ClientApp/src/app/model/app.datasource.ts" Line="1" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ManagerReview" expanded="True" selected="True">
+          <Node name="ManagerReview" expanded="True">
             <Node name="ManagerReview" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="FrameworkReferences" expanded="True" />
-              </Node>
               <Node name="ClientApp" expanded="True">
                 <Node name="src" expanded="True">
                   <Node name="app" expanded="True">
                     <Node name="home" expanded="True" />
-                    <Node name="model" expanded="True" />
+                    <Node name="model" expanded="True">
+                      <Node name="app.datasource.ts" selected="True" />
+                    </Node>
                   </Node>
                 </Node>
               </Node>
