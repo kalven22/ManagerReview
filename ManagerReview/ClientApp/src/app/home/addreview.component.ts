@@ -32,7 +32,9 @@ export class AddreviewComponent {
         team?: string) {
         this.firstname = firstname.toUpperCase();
         this.managerid = managerid;
-        console.log(this.managerid);
+      console.log(this.managerid);
+
+      this.router.navigateByUrl('/review', { state: { data: this.managerid, viewForm: true } });
 
         this.router.navigateByUrl('/review', {state: {data: this.managerid, viewForm: true}});
 
